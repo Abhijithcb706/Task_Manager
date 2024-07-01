@@ -2,7 +2,7 @@ const User = require('../models/userModel');
 const Task = require('../models/taskModel');
 
 const addTask = async (req, res) => {
-	const { task, id } = req.body;
+	const { task} = req.body;
 
 	try {
 		if (!task) return res.status(400).send('please enter the task');
