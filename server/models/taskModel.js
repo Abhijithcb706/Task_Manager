@@ -3,17 +3,13 @@ const mongoose = require('mongoose');
 const taskSchema = mongoose.Schema(
 	{
 		task: { type: String },
-		status: {
-			type: String,
-			enum: ['backlog', 'todo', 'doing', 'done'],
-			default: 'backlog',
-		},
-		cretedBy: {
+		created: { type: Date, default: Date.now },
+		createdBy: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: 'User',
-		},
+			ref:'User'
+		}
 	},
-	{ timestamp: true }
+	{ timestamps: true }
 );
 
 const Task = mongoose.model('Task', taskSchema);

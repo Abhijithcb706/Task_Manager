@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import './styles/main.scss';
 import Home from './pages/home/Home';
 import TaskManager from './pages/taskmanagement/TaskManager';
-import Dashboard from './pages/dashboard/Dashboard';
+// import Dashboard from './pages/dashboard/Dashboard';
 import RequireAuth from './utils/RequireAuth';
 import { useSelector } from 'react-redux';
 
@@ -20,8 +20,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={!user ? <Signin /> : <Dashboard />} />
-          <Route path="/signup" element={!user ? <Signup /> : <Dashboard />} />
+          <Route path="/signin" element={!user ? <Signin /> : <TaskManager />} />
+          <Route path="/signup" element={!user ? <Signup /> : <TaskManager />} />
           <Route
             path="/taskmanager"
             element={
@@ -30,16 +30,16 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route
+          {/* <Route
             path="/dashboard"
             element={
               <RequireAuth>
                 <Dashboard />
               </RequireAuth>
             }
-          />
+          /> */}
         </Routes>
-      </Router>
+      </Router> 
     </div>
   );
 }

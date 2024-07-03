@@ -12,14 +12,15 @@ const EditTask = ({ task }) => {
   };
 
   return (
-    <form onSubmit={handleUpdate}>
+    <form onSubmit={handleUpdate} >
       <input
+      className='border-2 border-sky-500 m-2'
         type="text"
         value={updatedTask}
         onChange={(e) => setUpdatedTask(e.target.value)}
         placeholder="Edit task"
       />
-      <button type="submit">Update Task</button>
+      <button type="submit" className='bg-cyan-400 w-32 rounded-md'>Update Task</button>
     </form>
   );
 };

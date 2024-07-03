@@ -13,9 +13,11 @@ const ListCard = ({ task }) => {
   return (
     <div className="bg-white rounded shadow p-4">
       <h2 className="text-lg font-semibold">{task.task}</h2>
-      <p>Status: {task.status}</p>
+      {/* <p>Status: {task.status}</p> */}
       <EditTask task={task} />
-      <button onClick={handleDelete} className="bg-red-500 px-4 py-2 rounded">Delete</button>
+      <button onClick={handleDelete} className="bg-red-500 px-4 py-2 rounded">
+        Delete
+      </button>
     </div>
   );
 };
