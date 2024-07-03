@@ -4,16 +4,16 @@ import axios from 'axios';
 const baseURL = 'http://localhost:8080'; // Adjust base URL as per your setup
 
 export const login = createAsyncThunk(
-  'user/signin',
-  async ({ email, password }, thunkAPI) => {
-    try {
-      const response = await axios.post(`${baseURL}/user/signin`, { email, password });
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data);
+    'user/signin',
+    async ({ email, password }, thunkAPI) => {
+      try {
+        const response = await axios.post(`${baseURL}/user/signin`, { email, password });
+        return response.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.response.data);
+      }
     }
-  }
-);
+  );
 
 export const signup = createAsyncThunk(
   'user/signup',

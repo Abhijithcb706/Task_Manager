@@ -14,7 +14,7 @@ const EditTask = ({ task }) => {
   return (
     <form onSubmit={handleUpdate} >
       <input
-      className='border-2 border-sky-500 m-2'
+      className='border-2 border-black m-2'
         type="text"
         value={updatedTask}
         onChange={(e) => setUpdatedTask(e.target.value)}

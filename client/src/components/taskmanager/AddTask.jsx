@@ -29,11 +29,11 @@ const AddTask = () => {
   };
 
   return (
-    <>
-      <div className='bg-red-700 w-96 h-28 flex justify-items-center items-center px-8 drop-shadow-xl'>
+    <div className='flex items-center justify-center'>
+      <div className='w-fit h-28 flex justify-items-center items-center px-8 drop-shadow-xl'>
         <form onSubmit={handleSubmit}>
           <input
-            className='bg-black w-38 h-10'
+            className=' w-38 h-10 m-3'
             type="text"
             value={task}
             onChange={(e) => setTask(e.target.value)}
@@ -44,7 +44,7 @@ const AddTask = () => {
       </div>
       {error && <div className="alert alert-danger">{error}</div>}
       {success && <div className="alert alert-success ">{success}</div>}
-    </>
+    </div>
   );
 };
 
